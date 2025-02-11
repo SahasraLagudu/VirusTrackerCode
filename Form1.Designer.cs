@@ -39,7 +39,7 @@
             this.upload.Name = "upload";
             this.upload.Size = new System.Drawing.Size(194, 80);
             this.upload.TabIndex = 0;
-            this.upload.Text = "Upload .csv";
+            this.upload.Text = "New Button";
             this.upload.UseVisualStyleBackColor = true;
             this.upload.Click += new System.EventHandler(this.button1_Click);
             // 
