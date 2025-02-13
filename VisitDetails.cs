@@ -10,21 +10,14 @@ using System.Windows.Forms;
 
 namespace VirusTrackerCode
 {
-    public partial class Form2 : Form
+    public partial class VisitDetails : Form
     {
-        public Form2()
+        public VisitDetails()
         {
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Hide(); 
-            Form1 f1 = new Form1(); 
-            f1.Show(); 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void VisitDetails_Load(object sender, EventArgs e)
         {
 
         }

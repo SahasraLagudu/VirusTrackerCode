@@ -24,8 +24,24 @@ namespace VirusTrackerCode
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.Hide(); 
             Form4 f4 = new Form4(); 
             f4.Show(); 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide(); 
+            Form1 f1 = new Form1();
+            f1.Show(); 
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide(); 
+            SearchPatientID sp = new SearchPatientID();
+            sp.Show();
         }
     }
 }
