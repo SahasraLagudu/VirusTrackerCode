@@ -10,30 +10,32 @@ using System.Windows.Forms;
 
 namespace VirusTrackerCode
 {
-    public partial class SearchPatientID : Form
+    public partial class RiskScoresandGraphs : Form
     {
-        int ID; 
-        public SearchPatientID()
+        public RiskScoresandGraphs()
         {
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-            string ID_new = textBox1.Text; 
-            ID = Int32.Parse(ID_new);
+            this.Hide();
+            Form1 f1 = new Form1();
+            f1.Show(); 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            RiskScore rs = new RiskScore(); 
+            rs.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide(); 
-            Form3 f3 = new Form3();
-            f3.Show(); 
+            this.Hide();
+            BarChartsOrHistograms bh = new BarChartsOrHistograms();
+            bh.Show();
         }
     }
 }

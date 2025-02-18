@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace VirusTrackerCode
 {
-    public partial class SearchPatientID : Form
+    public partial class BarChartsOrHistograms : Form
     {
-        int ID; 
-        public SearchPatientID()
+        public BarChartsOrHistograms()
         {
             InitializeComponent();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            string ID_new = textBox1.Text; 
-            ID = Int32.Parse(ID_new);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -29,11 +22,11 @@ namespace VirusTrackerCode
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-            this.Hide(); 
-            Form3 f3 = new Form3();
-            f3.Show(); 
+            this.Hide();
+            Stats stats = new Stats();
+            stats.Show(); 
         }
     }
 }

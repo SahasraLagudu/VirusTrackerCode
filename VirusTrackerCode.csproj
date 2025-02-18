@@ -34,6 +34,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Collections.NonGeneric, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Collections.NonGeneric.4.3.0\lib\net46\System.Collections.NonGeneric.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BarChartsOrHistograms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BarChartsOrHistograms.Designer.cs">
+      <DependentUpon>BarChartsOrHistograms.cs</DependentUpon>
+    </Compile>
     <Compile Include="CalculateRiskScores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,11 +89,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RiskScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RiskScore.Designer.cs">
+      <DependentUpon>RiskScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RiskScoresandGraphs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RiskScoresandGraphs.Designer.cs">
+      <DependentUpon>RiskScoresandGraphs.cs</DependentUpon>
+    </Compile>
     <Compile Include="SearchPatientID.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SearchPatientID.Designer.cs">
       <DependentUpon>SearchPatientID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stats.Designer.cs">
+      <DependentUpon>Stats.cs</DependentUpon>
     </Compile>
     <Compile Include="VisitDetails.cs">
       <SubType>Form</SubType>
@@ -90,6 +119,9 @@
     <Compile Include="VisitDetails.Designer.cs">
       <DependentUpon>VisitDetails.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BarChartsOrHistograms.resx">
+      <DependentUpon>BarChartsOrHistograms.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CalculateRiskScores.resx">
       <DependentUpon>CalculateRiskScores.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,12 +146,22 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RiskScore.resx">
+      <DependentUpon>RiskScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RiskScoresandGraphs.resx">
+      <DependentUpon>RiskScoresandGraphs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SearchPatientID.resx">
       <DependentUpon>SearchPatientID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stats.resx">
+      <DependentUpon>Stats.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VisitDetails.resx">
       <DependentUpon>VisitDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
