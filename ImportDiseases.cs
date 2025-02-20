@@ -21,7 +21,7 @@ namespace VirusTrackerCode
         {
             openFileDialog1.Filter = "CSV files (*.csv)|*.csv";
             openFileDialog1.ShowDialog(); //check permissions, //use List Types only as you can do efficient searching, ArrayList types are too
-            //difficult to search or use
+            //difficult to search or use, what's an ienumerable?
         }
     }
 }
