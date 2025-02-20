@@ -20,7 +20,8 @@ namespace VirusTrackerCode
         private void button1_Click(object sender, EventArgs e)
         {
             openFileDialog1.Filter = "CSV files (*.csv)|*.csv";
-            openFileDialog1.ShowDialog(); //check permissions
+            openFileDialog1.ShowDialog(); //check permissions, //use List Types only as you can do efficient searching, ArrayList types are too
+            //difficult to search or use
         }
     }
 }
