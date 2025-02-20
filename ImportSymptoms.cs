@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace VirusTrackerCode
 {
-    public partial class Stats : Form
+    public partial class ImportSymptoms : Form
     {
-        public Stats()
+        public ImportSymptoms()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "CSV files (*.csv)|*.csv";
+            openFileDialog1.ShowDialog();
         }
     }
 }

@@ -21,5 +21,12 @@ namespace VirusTrackerCode
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide(); 
+            RiskScoresandGraphs rs = new RiskScoresandGraphs();
+            rs.Show(); 
+        }
     }
 }

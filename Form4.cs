@@ -63,5 +63,10 @@ namespace VirusTrackerCode
         {
             int age = Convert.ToInt32(textBox1.Text); 
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
