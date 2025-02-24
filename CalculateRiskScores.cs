@@ -28,5 +28,10 @@ namespace VirusTrackerCode
             RiskScoresandGraphs rs = new RiskScoresandGraphs();
             rs.Show(); 
         }
+
+        private void CalculateRiskScores_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

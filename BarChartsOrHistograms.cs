@@ -21,7 +21,8 @@ namespace VirusTrackerCode
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Form5 f5 = new Form5();
+            f5.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -38,6 +39,8 @@ namespace VirusTrackerCode
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Histograms histograms = new Histograms();
+            histograms.Show();
             List<String> histogram_bins = new List<string>(); 
             int bin_size = Int32.Parse(textBox2.Text); //does this do hexadecimal? or does it convert directly
             int min = Int32.Parse(textBox1.Text);

@@ -124,6 +124,7 @@
             this.Controls.Add(this.label1);
             this.Name = "CalculateRiskScores";
             this.Text = "CalculateRiskScores";
+            this.Load += new System.EventHandler(this.CalculateRiskScores_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
