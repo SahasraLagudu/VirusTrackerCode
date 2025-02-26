@@ -12,6 +12,11 @@ namespace VirusTrackerCode
 {
     public partial class Form4 : Form
     {
+        public int age;
+        public int patientID;
+        public bool gender;
+        public string country;
+
         public Form4()
         {
             InitializeComponent();
@@ -24,15 +29,19 @@ namespace VirusTrackerCode
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if ((string)comboBox1.SelectedItem == "Male")
+            {
+                gender = true;
+            }
+            else
+            {
+                gender = false;
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (System.Text.RegularExpressions.Regex.IsMatch(textBox1.Text, "[^0-9]"))
-            {
-                MessageBox.Show("Please enter only numbers.");
-            }
+
         }
 
         private void Form4_Load(object sender, EventArgs e)
@@ -44,29 +53,57 @@ namespace VirusTrackerCode
 
         private void toolTip1_Popup(object sender, PopupEventArgs e)
         {
-            
+            ;
+
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            //int patientID = int.Parse(textBox3.Text);
-            /*int? patientID;
-            if (int.TryParse(textBox3.Text, out patientID)
+            while (System.Text.RegularExpressions.Regex.IsMatch(textBox3.Text, "[^0-9]"))
             {
-                DoSomething(userVal.Value);
+                MessageBox.Show("Please enter only numbers.");
             }
-            else
-            { MessageBox.Show("Hey, we need an int over here."); }*/
+            patientID = Convert.ToInt32(textBox3.Text);
         }
 
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
-            int age = Convert.ToInt32(textBox1.Text); 
+            while (System.Text.RegularExpressions.Regex.IsMatch(textBox1.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Please enter only numbers.");
+            }
+            age = Convert.ToInt32(textBox1.Text);
         }
 
         private void label6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        public int getAge()
+        {
+            return age;
+        }
+
+        public int getID()
+        {
+            return patientID;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            country = (string)comboBox1.SelectedItem;
+        }
+
+        public bool getGender()
+        {
+
+            return gender;
+        }
+
+        public string getCountry()
+        {
+            return country;
         }
     }
 }

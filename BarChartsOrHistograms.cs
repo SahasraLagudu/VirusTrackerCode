@@ -42,7 +42,7 @@ namespace VirusTrackerCode
             Histograms histograms = new Histograms();
             histograms.Show();
             List<String> histogram_bins = new List<string>(); 
-            int bin_size = Int32.Parse(textBox2.Text); //does this do hexadecimal? or does it convert directly
+            int bin_size = Int32.Parse(textBox2.Text); 
             int min = Int32.Parse(textBox1.Text);
             int max = Int32.Parse(textBox3.Text);
             int index = 0; string range = ""; 
