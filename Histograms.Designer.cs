@@ -60,6 +60,7 @@
             this.Controls.Add(this.chart1);
             this.Name = "Histograms";
             this.Text = "Histograms";
+            this.Load += new System.EventHandler(this.Histograms_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 

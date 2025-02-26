@@ -24,6 +24,11 @@ namespace VirusTrackerCode
             string yAxis = "";
             chart1.Series["Series1"].ChartType = SeriesChartType.Column;
             chart1.Series["Series1"].Label = xAxis + " vs " + yAxis;
+            //switch chart type
+        }
+
+        private void Histograms_Load(object sender, EventArgs e)
+        {
 
         }
     }
