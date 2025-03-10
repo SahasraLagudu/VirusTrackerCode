@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using Microsoft.Win32; 
 
 namespace VirusTrackerCode
@@ -35,11 +36,7 @@ namespace VirusTrackerCode
 
             using (OleDbConnection connection = new OleDbConnection(ConnectionString))
             {
-                //command.Connection = connection;
                 connection.Open();
-
-                //MessageBox.Show("connected");
-
                 OleDbCommand command = new OleDbCommand(query, connection);
                 command.ExecuteNonQuery();
                 connection.Close();
@@ -112,6 +109,57 @@ namespace VirusTrackerCode
                 MessageBox.Show("Import Completed");
             }
 
+        }
+    }
+
+    public class Symptom
+    {
+        public int SymptomID { get; set; }
+        public string SymptomName { get; set; }
+
+        public List<String> populateSymptoms()
+        {
+            List<String> Symptoms = new List<String>();
+            string ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\rajul\source\repos\VirusTrackerCode\ClientDatabase\ClientDataVirusTracker.accdb";
+            string query = "SELECT Symptom FROM SymptomLookup";
+            using (OleDbConnection connection = new OleDbConnection(ConnectionString))
+            {
+                //command.Connection = connection;
+                connection.Open();
+                OleDbDataReader reader = null;
+                //MessageBox.Show("connected");
+
+                OleDbCommand command = new OleDbCommand(query, connection);
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    Symptoms.Add(reader[0].ToString());
+                }
+                connection.Close();
+            }
+            return Symptoms;
+        }
+    }
+
+    public class Disease 
+    {
+        public int DiseaseID { get; set; }
+        public string DiseaseName { get; set; }
+
+        public DataTable populateDiseases()
+        {
+            DataTable Diseases = new DataTable();
+            string ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\rajul\source\repos\VirusTrackerCode\ClientDatabase\ClientDataVirusTracker.accdb";
+            string query = "SELECT DiseaseID, Disease FROM DiseaseLookup";
+            using (OleDbConnection connection = new OleDbConnection(ConnectionString))
+            {
+                connection.Open();
+                OleDbCommand command = new OleDbCommand(query, connection);
+                OleDbDataAdapter adapter = new OleDbDataAdapter(command);
+                adapter.Fill(Diseases);
+                connection.Close();
+            }
+            return Diseases;
         }
     }
 }

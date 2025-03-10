@@ -36,5 +36,12 @@ namespace VirusTrackerCode
             ImportCSV f2 = new ImportCSV();
             f2.Show(); 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            VisitDetails visit = new VisitDetails();
+            visit.Show();
+        }
     }
 }

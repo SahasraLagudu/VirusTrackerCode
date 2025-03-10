@@ -25,7 +25,7 @@ namespace VirusTrackerCode
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide(); 
-            Form4 f4 = new Form4(); 
+            ModifyPersonalDetails f4 = new ModifyPersonalDetails(); 
             f4.Show(); 
         }
 
