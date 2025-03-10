@@ -1,6 +1,6 @@
 ﻿namespace VirusTrackerCode
 {
-    partial class Stats
+    partial class DatabaseConvert
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // Stats
+            // DatabaseConvert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(676, 510);
-            this.Name = "Stats";
-            this.Text = "Stats";
+            this.ClientSize = new System.Drawing.Size(623, 538);
+            this.Name = "DatabaseConvert";
+            this.Text = "DatabaseConvert";
             this.ResumeLayout(false);
 
         }

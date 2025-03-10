@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace VirusTrackerCode
 {
-    public partial class Stats : Form
+    public partial class DatabaseConvert : Form
     {
-        public Stats()
+        public DatabaseConvert()
         {
             InitializeComponent();
         }

@@ -95,11 +95,12 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(69, 141);
+            this.label6.Location = new System.Drawing.Point(67, 145);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(123, 20);
             this.label6.TabIndex = 5;
             this.label6.Text = "Enter Patient ID";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // comboBox1
             // 
@@ -337,6 +338,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(144, 21);
             this.comboBox1.TabIndex = 6;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // comboBox2
             // 
@@ -353,7 +355,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(369, 435);
+            this.button1.Location = new System.Drawing.Point(370, 435);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(132, 52);
             this.button1.TabIndex = 9;
@@ -364,7 +366,7 @@
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(249, 134);
+            this.textBox3.Location = new System.Drawing.Point(249, 145);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(144, 31);
             this.textBox3.TabIndex = 11;

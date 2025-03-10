@@ -20,7 +20,7 @@ namespace VirusTrackerCode
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Stats stats = new Stats();
+            RiskScoresandGraphs stats = new RiskScoresandGraphs();
             stats.Show(); 
         }
 

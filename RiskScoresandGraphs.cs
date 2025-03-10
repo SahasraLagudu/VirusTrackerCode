@@ -27,7 +27,7 @@ namespace VirusTrackerCode
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            RiskScore rs = new RiskScore(); 
+            CalculateRiskScores rs = new CalculateRiskScores(); 
             rs.Show();
         }
 
@@ -36,6 +36,11 @@ namespace VirusTrackerCode
             this.Hide();
             BarChartsOrHistograms bh = new BarChartsOrHistograms();
             bh.Show();
+        }
+
+        private void RiskScoresandGraphs_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
