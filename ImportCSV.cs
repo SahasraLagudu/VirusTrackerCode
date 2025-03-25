@@ -7,6 +7,7 @@ using System.Data.OleDb;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -31,7 +32,8 @@ namespace VirusTrackerCode
 
         private void InsertSymptom(string name)
         {
-            string ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\rajul\source\repos\VirusTrackerCode\ClientDatabase\ClientDataVirusTracker.accdb";
+            DBAttributes dBAttributes = new DBAttributes();
+            string ConnectionString = dBAttributes.getConnectionString();
             string query = "INSERT INTO SymptomLookup (Symptom) VALUES('" + name + "')";
 
             using (OleDbConnection connection = new OleDbConnection(ConnectionString))
@@ -45,7 +47,7 @@ namespace VirusTrackerCode
         private void button1_Click(object sender, EventArgs e)
         {
             OpenFileDialog ImportSymptoms = new OpenFileDialog();
-            //ImportSymptoms.Filter = "*.csv"; 
+            ImportSymptoms.Filter = "CSV files (*.csv)|*.csv"; 
             StreamReader reader = null;
             if (DialogResult.OK == ImportSymptoms.ShowDialog())
             {
@@ -74,16 +76,13 @@ namespace VirusTrackerCode
 
         private void InsertDisease(string name)
         {
-            string ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\rajul\source\repos\VirusTrackerCode\ClientDatabase\ClientDataVirusTracker.accdb";
+            DBAttributes dBAttributes = new DBAttributes();
+            string ConnectionString = dBAttributes.getConnectionString();
             string query = "INSERT INTO DiseaseLookup (Disease) VALUES('" + name + "')";
 
             using (OleDbConnection connection = new OleDbConnection(ConnectionString))
             {
-                //command.Connection = connection;
                 connection.Open();
-
-                //MessageBox.Show("connected");
-
                 OleDbCommand command = new OleDbCommand(query, connection);
                 command.ExecuteNonQuery();
                 connection.Close();
@@ -93,7 +92,7 @@ namespace VirusTrackerCode
         private void button2_Click(object sender, EventArgs e)
         {
             OpenFileDialog ImportDiseases = new OpenFileDialog();
-            //ImportSymptoms.Filter = "*.csv"; 
+            ImportDiseases.Filter = "CSV files (*.csv)|*.csv";
             StreamReader reader = null;
             if (DialogResult.OK == ImportDiseases.ShowDialog())
             {
@@ -112,6 +111,16 @@ namespace VirusTrackerCode
         }
     }
 
+    public class DBAttributes 
+    { 
+        public static string ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\rajul\source\repos\VirusTrackerCode\ClientDatabase\ClientDataVirusTracker.accdb";
+        public string getConnectionString()
+        {
+            return ConnectionString; 
+        }
+    }
+
+
     public class Symptom
     {
         public int SymptomID { get; set; }
@@ -120,14 +129,13 @@ namespace VirusTrackerCode
         public List<String> populateSymptoms()
         {
             List<String> Symptoms = new List<String>();
-            string ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\rajul\source\repos\VirusTrackerCode\ClientDatabase\ClientDataVirusTracker.accdb";
+            DBAttributes dBAttributes = new DBAttributes();
+            string ConnectionString = dBAttributes.getConnectionString(); 
             string query = "SELECT Symptom FROM SymptomLookup";
             using (OleDbConnection connection = new OleDbConnection(ConnectionString))
             {
-                //command.Connection = connection;
                 connection.Open();
                 OleDbDataReader reader = null;
-                //MessageBox.Show("connected");
 
                 OleDbCommand command = new OleDbCommand(query, connection);
                 reader = command.ExecuteReader();
@@ -149,7 +157,8 @@ namespace VirusTrackerCode
         public DataTable populateDiseases()
         {
             DataTable Diseases = new DataTable();
-            string ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\rajul\source\repos\VirusTrackerCode\ClientDatabase\ClientDataVirusTracker.accdb";
+            DBAttributes dBAttributes = new DBAttributes();
+            string ConnectionString = dBAttributes.getConnectionString();
             string query = "SELECT DiseaseID, Disease FROM DiseaseLookup";
             using (OleDbConnection connection = new OleDbConnection(ConnectionString))
             {

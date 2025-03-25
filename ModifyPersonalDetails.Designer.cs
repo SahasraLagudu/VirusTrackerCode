@@ -100,7 +100,7 @@
             this.label6.Size = new System.Drawing.Size(123, 20);
             this.label6.TabIndex = 5;
             this.label6.Text = "Enter Patient ID";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+           
             // 
             // comboBox1
             // 
@@ -338,7 +338,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(144, 21);
             this.comboBox1.TabIndex = 6;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+           
             // 
             // comboBox2
             // 

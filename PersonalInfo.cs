@@ -9,6 +9,7 @@ namespace VirusTrackerCode
 {
     public class PersonalInfo
     {
+        /*
         Form4 f4 = new Form4();
         int PatientID;
         int age;
@@ -38,5 +39,6 @@ namespace VirusTrackerCode
         {
             country = f4.getCountry();
         }
+        */
     }
 }

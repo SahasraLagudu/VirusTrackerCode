@@ -40,17 +40,14 @@ namespace VirusTrackerCode
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             DateTime visitDate = monthCalendar1.TodayDate;
-            string symptoms = "";
+            List<String> symptoms = new List<String>(); 
             if (listSymptoms.CheckedItems.Count != 0)
             { 
                 for (int i = 0; i < listSymptoms.CheckedItems.Count; i++)
                 {
-                    if (i == listSymptoms.CheckedItems.Count - 1)
-                    {
-                        break; 
-                    }
-                    symptoms += listSymptoms.CheckedItems[i].ToString() + ", ";
+                    symptoms.Add(listSymptoms.CheckedItems[i].ToString());
                 }
             }
             int diseaseID = (int) comboDiseases.SelectedValue;
@@ -59,9 +56,10 @@ namespace VirusTrackerCode
             MessageBox.Show("Saved Values");
         }
 
-        private void InsertVisitDetails(DateTime visitDate, string symptoms, int diseaseID, string result)
+        private void InsertVisitDetails(DateTime visitDate, List<String> symptoms, int diseaseID, string result)
         {
-            string ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\rajul\source\repos\VirusTrackerCode\ClientDatabase\ClientDataVirusTracker.accdb";
+            DBAttributes dbat = new DBAttributes();
+            string ConnectionString = dbat.getConnectionString();
             string query = "INSERT INTO VisitTable (VisitDate, Symptoms, DiseaseID, Result) VALUES ('" + visitDate + "', '" + symptoms + "', " + diseaseID + ", '" + result + "')";
 
             using (OleDbConnection connection = new OleDbConnection(ConnectionString))
@@ -71,11 +69,24 @@ namespace VirusTrackerCode
                 command.ExecuteNonQuery();
                 connection.Close();
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
 
         }
     }
+
+    public class Visits
+    {
+        DateTime visitDate;
+        List<String> Symptoms;
+        int diseaseID;
+        string result; 
+
+        public Visits(DateTime visitDate, List<String> Symptoms, int diseaseID, string result)
+        {
+            this.visitDate = visitDate;
+            this.Symptoms = Symptoms;
+            this.diseaseID = diseaseID;
+            this.result = result;
+        }
+    }
+
 }
